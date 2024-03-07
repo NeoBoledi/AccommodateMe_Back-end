@@ -24,7 +24,6 @@ public class Student {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "stud_id")
     private Integer studentId;
-
     private String fullName;
     private String contactDetails;
     private String email;
