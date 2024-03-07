@@ -38,7 +38,7 @@ public class Residence {
     private Admin admin;
 
     @OneToMany(mappedBy = "residence")
-    private List<Room> room;
+    private List<Room> rooms;
 
     @OneToMany(mappedBy = "residence")
     private List<Issues> issues;
@@ -50,6 +50,7 @@ public class Residence {
     private List<Location> location;
 
     @OneToMany(mappedBy = "residence")
-    private List<Application> application;
+    private List<Application> applications;
+
 
 }

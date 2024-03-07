@@ -23,24 +23,15 @@ public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "stud_id")
-    private Integer studId;
+    private Integer studentId;
 
     private String fullName;
     private String contactDetails;
     private String email;
-    private String guardinaFullName;
-    private String guardianContacts;
-    private String nsfas;
-    private String institution;
-    private String yearOfStudy;
-    private String faculty;
-    private Character gender;
     private String password;
+    private  String role;
 
 
-    @ManyToOne
-    @JoinColumn(name = "room_id", nullable = false)
-    private Room room;
 
     @OneToMany(mappedBy = "student")
     private List<Review> review;
@@ -49,6 +40,6 @@ public class Student {
     private List<Issues> issues;
 
     @OneToMany(mappedBy = "student")
-    private List<Application> application;
+    private List<Application> applications;
 
 }

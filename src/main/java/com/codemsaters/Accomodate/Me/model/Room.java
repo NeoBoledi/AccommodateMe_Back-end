@@ -10,29 +10,30 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 @Entity
+@Getter
+@Setter
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
 public class Room {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "room_id")
-    private Integer roomId;
+    private Long roomId;
 
-    private int roomNumber;
+    private Integer roomNumber;
     private String roomType;
 
     @OneToMany(mappedBy = "room")
-    private List<Student> student;
+    private List<Application> applications;
 
     @ManyToOne
-    @JoinColumn(name = "residence_id", nullable = false)
+    @JoinColumn(name = "residence_id")
     private Residence residence;
 
 }
+
