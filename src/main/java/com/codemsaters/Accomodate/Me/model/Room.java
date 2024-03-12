@@ -29,7 +29,7 @@ public class Room {
     private String roomType;
 
     @OneToMany(mappedBy = "room")
-    private List<Student> student;
+    private List<Application> applications;
 
     @ManyToOne
     @JoinColumn(name = "residence_id", nullable = false)

@@ -1,5 +1,6 @@
 package com.codemsaters.Accomodate.Me.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import jakarta.persistence.Column;
@@ -8,6 +9,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
+import jakarta.persistence.OneToOne;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -23,11 +25,18 @@ public class Admin {
     @Column(name = "admin_id")
     private Integer adminId;
 
-    private String fullName;
+    private String fullname;
 
-    private String address;
+    private String email;
 
-    @OneToMany(mappedBy = "admin")
-    private List<Residence> residence;
+    private String name;
+    private int regNo;
+    private List<String> utility = new ArrayList<>();
+    private String profileImage;
+    private List<String> images = new ArrayList<>();
+    private String nsfasDocument;
+
+    @OneToOne(mappedBy = "admin")
+    private Residence residence;
 
 }

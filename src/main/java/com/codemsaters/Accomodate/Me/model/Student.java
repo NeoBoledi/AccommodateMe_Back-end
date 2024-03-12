@@ -25,19 +25,12 @@ public class Student {
     @Column(name = "stud_id")
     private Integer studId;
 
+    private Integer studentId;
     private String fullName;
     private String contactDetails;
     private String email;
-    private String guardinaFullName;
-    private String guardianContacts;
-    private String nsfas;
-    private String institution;
-    private String yearOfStudy;
-    private String faculty;
-
-    @ManyToOne
-    @JoinColumn(name = "room_id", nullable = false)
-    private Room room;
+    private String password;
+    private String role;
 
     @OneToMany(mappedBy = "student")
     private List<Review> review;
