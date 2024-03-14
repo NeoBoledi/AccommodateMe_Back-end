@@ -27,7 +27,11 @@ public class Residence {
     private Integer residenceId;
 
     private String name;
+    private String slogan;
     private int regNo;
+    private int totalNumberOfRooms;
+    private int totalNumberOfSingleRooms;
+    private int totalNumberOfDoubleRooms;
     private List<String> utility = new ArrayList<>();
     private String profileImage;
     private List<String> images = new ArrayList<>();

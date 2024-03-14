@@ -24,7 +24,9 @@ public class SecurityConfiguration {
         http
                 .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(authorize -> {
-                    authorize.requestMatchers("api/vi/**").permitAll();
+                    authorize.requestMatchers("api/vi/register").permitAll();
+                    authorize.requestMatchers("api/vi/login").permitAll();
+                    authorize.requestMatchers("api/vi/test").permitAll();
                     authorize.requestMatchers("api/vi/auth/admin/**").authenticated();
                     authorize.anyRequest().authenticated();
                 })

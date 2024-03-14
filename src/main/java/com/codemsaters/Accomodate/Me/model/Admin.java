@@ -17,6 +17,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToOne;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -24,6 +25,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 public class Admin implements UserDetails {
 
     @Id
@@ -38,10 +40,15 @@ public class Admin implements UserDetails {
     private String password;
 
     private String name;
+    private String slogan;
     private int regNo;
+    private String phoneNumber;
+    private int totalNumberOfRooms;
+    private int totalNumberOfSingleRooms;
+    private int totalNumberOfDoubleRooms;
     private List<String> utility = new ArrayList<>();
     private String profileImage;
-    private List<String> images = new ArrayList<>();
+    private List<String> images = new ArrayList<>(6);
     private String nsfasDocument;
 
     @OneToOne(mappedBy = "admin")
